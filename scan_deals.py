@@ -1,5 +1,4 @@
-"""
-YVR Deal Scanner — checks Google Flights prices (via SerpApi) for a set of
+VR Deal Scanner — checks Google Flights prices (via SerpApi) for a set of
 routes and reports anything Google itself flags as "low" for that route/date,
 or that beats your manual price target.
 
@@ -18,8 +17,6 @@ Docs: https://serpapi.com/google-flights-api
 
 import os
 import json
-import smtplib
-from email.mime.text import MIMEText
 from datetime import date, timedelta
 
 import requests
@@ -114,23 +111,29 @@ def format_report(results):
 
 
 def send_email(subject, body):
-    smtp_user = os.environ.get("SMTP_USER")
-    smtp_pass = os.environ.get("SMTP_PASS")
-    alert_email = os.environ.get("ALERT_EMAIL", smtp_user)
+    """Send the report via Resend's free email API (no app password needed)."""
+    api_key = os.environ.get("RESEND_API_KEY")
+    alert_email = os.environ.get("ALERT_EMAIL")
 
-    if not smtp_user or not smtp_pass:
-        print("SMTP_USER / SMTP_PASS not set — skipping email, printing report instead.")
+    if not api_key or not alert_email:
+        print("RESEND_API_KEY / ALERT_EMAIL not set — skipping email, printing report instead.")
         return
 
-    msg = MIMEText(body)
-    msg["Subject"] = subject
-    msg["From"] = smtp_user
-    msg["To"] = alert_email
-
-    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
-        server.login(smtp_user, smtp_pass)
-        server.sendmail(smtp_user, [alert_email], msg.as_string())
-    print(f"Email sent to {alert_email}")
+    resp = requests.post(
+        "https://api.resend.com/emails",
+        headers={"Authorization": f"Bearer {api_key}"},
+        json={
+            "from": "YVR Deal Scanner <onboarding@resend.dev>",
+            "to": [alert_email],
+            "subject": subject,
+            "text": body,
+        },
+        timeout=20,
+    )
+    if resp.status_code >= 300:
+        print(f"Email send failed ({resp.status_code}): {resp.text}")
+    else:
+        print(f"Email sent to {alert_email}")
 
 
 def main():
