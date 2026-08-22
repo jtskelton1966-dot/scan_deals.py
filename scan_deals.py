@@ -1,4 +1,5 @@
-VR Deal Scanner — checks Google Flights prices (via SerpApi) for a set of
+"""
+YVR Deal Scanner - checks Google Flights prices (via SerpApi) for a set of
 routes and reports anything Google itself flags as "low" for that route/date,
 or that beats your manual price target.
 
@@ -93,7 +94,7 @@ def scan():
 
 
 def format_report(results):
-    lines = ["YVR Deal Scanner — results\n"]
+    lines = ["YVR Deal Scanner - results\n"]
     any_deal = False
     for r in results:
         if r["lowest_price"] is None:
@@ -101,7 +102,7 @@ def format_report(results):
             continue
         if r["is_deal"]:
             any_deal = True
-        flag = "DEAL" if r["is_deal"] else "—"
+        flag = "DEAL" if r["is_deal"] else "-"
         typical = f", typical CAD {r['typical_range'][0]}-{r['typical_range'][1]}" if r["typical_range"] else ""
         lines.append(
             f"{r['label']} ({r['origin']}-{r['dest']}): CAD {r['lowest_price']:.0f} "
@@ -116,7 +117,7 @@ def send_email(subject, body):
     alert_email = os.environ.get("ALERT_EMAIL")
 
     if not api_key or not alert_email:
-        print("RESEND_API_KEY / ALERT_EMAIL not set — skipping email, printing report instead.")
+        print("RESEND_API_KEY / ALERT_EMAIL not set - skipping email, printing report instead.")
         return
 
     resp = requests.post(
@@ -145,9 +146,9 @@ def main():
         json.dump(results, f, indent=2, default=str)
 
     if any_deal:
-        send_email("✈️ YVR deal alert", report)
+        send_email(" YVR deal alert", report)
     else:
-        print("No deals this run — no email sent.")
+        print("No deals this run - no email sent.")
 
 
 if __name__ == "__main__":
