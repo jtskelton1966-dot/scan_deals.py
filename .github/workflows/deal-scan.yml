@@ -21,8 +21,8 @@ jobs:
       - name: Run scanner
         env:
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
-          SMTP_USER: ${{ secrets.SMTP_USER }}
-          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          
           ALERT_EMAIL: ${{ secrets.ALERT_EMAIL }}
         run: python scan_deals.py
 
