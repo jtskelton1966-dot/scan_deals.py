@@ -2,9 +2,12 @@ name: YVR Deal Scanner
 
 on:
   schedule:
-    # Runs once a day at 14:00 UTC (~7am Pacific). Edit the cron to taste.
-    - cron: '0 14 * * *'
-  workflow_dispatch: {}   # lets you trigger it manually from the Actions tab
+    # Runs once a week, Monday 14:00 UTC (~7am Pacific). Edit the cron to taste.
+    - cron: '0 14 * * 1'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
 
 jobs:
   scan:
@@ -22,12 +25,14 @@ jobs:
         env:
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-          
           ALERT_EMAIL: ${{ secrets.ALERT_EMAIL }}
+          ROUTES_SHEET_CSV_URL: ${{ secrets.ROUTES_SHEET_CSV_URL }}
         run: python scan_deals.py
 
-      - name: Save results as an artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: last-scan
-          path: last_scan.json
+      - name: Commit updated data file
+        run: |
+          git config user.name "yvr-deal-scanner-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/deals.json
+          git diff --quiet --cached || git commit -m "Update deal data"
+          git push
