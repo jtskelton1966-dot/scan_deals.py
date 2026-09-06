@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>YVR Deal Board</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0A0E1A">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root{
+  --bg:#0A0E1A;
+  --panel:#121A2E;
+  --panel-alt:#182036;
+  --amber:#FFB627;
+  --amber-dim:#8A6A2E;
+  --text:#E7EAF2;
+  --text-dim:#8B93A7;
+  --good:#4ADE80;
+  --good-dim:#1F3B2C;
+  --warn:#FB7185;
+  --warn-dim:#3B1F27;
+  --fair:#FCD34D;
+  --fair-dim:#3B321A;
+  --divider:rgba(255,255,255,0.08);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html,body{margin:0;padding:0;}
+body{
+  background:
+    radial-gradient(ellipse 900px 500px at 15% -10%, rgba(255,182,39,0.06), transparent 60%),
+    var(--bg);
+  color:var(--text);
+  font-family:'Manrope',sans-serif;
+  padding:20px 16px 48px;
+  min-height:100vh;
+  padding-bottom:env(safe-area-inset-bottom, 0px);
+}
+.wrap{max-width:640px;margin:0 auto;}
+
+.header{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  border-bottom:1px solid var(--divider);
+  padding-bottom:16px;margin-bottom:20px;
+}
+.brand{display:flex;align-items:center;gap:10px;}
+.brand-mark{
+  width:32px;height:32px;border-radius:8px;
+  background:linear-gradient(135deg,var(--amber),#C98E1F);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'JetBrains Mono',monospace;font-weight:800;color:#0A0E1A;font-size:13px;
+}
+.brand-text h1{font-size:16px;margin:0;font-weight:800;}
+.brand-text p{margin:2px 0 0;font-size:10px;color:var(--text-dim);font-family:'JetBrains Mono',monospace;letter-spacing:0.03em;}
+.refresh-note{font-size:10px;color:var(--text-dim);font-family:'JetBrains Mono',monospace;text-align:right;line-height:1.5;}
+.refresh-note b{color:var(--amber);}
+
+.route-card{
+  background:var(--panel);border:1px solid var(--divider);border-radius:12px;
+  margin-bottom:14px;overflow:hidden;
+}
+.route-head{
+  padding:14px 16px;background:var(--panel-alt);border-bottom:1px solid var(--divider);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.route-head h2{font-size:15px;margin:0;font-weight:700;}
+.route-head span{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-dim);}
+
+.date-strip{
+  display:flex;gap:8px;overflow-x:auto;padding:14px 16px;
+  scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;
+}
+.date-strip::-webkit-scrollbar{display:none;}
+.date-chip{
+  flex:0 0 auto;scroll-snap-align:start;
+  min-width:84px;border-radius:10px;padding:10px 8px;text-align:center;
+  border:1px solid var(--divider);background:rgba(255,255,255,0.02);
+}
+.date-chip.deal{background:var(--good-dim);border-color:var(--good);}
+.date-chip.high{background:var(--warn-dim);border-color:var(--warn);}
+.date-chip .d{font-size:10px;color:var(--text-dim);font-family:'JetBrains Mono',monospace;}
+.date-chip .p{font-size:16px;font-weight:800;font-family:'JetBrains Mono',monospace;color:var(--text);margin-top:4px;}
+.date-chip.deal .p{color:var(--good);}
+.date-chip.high .p{color:var(--warn);}
+.date-chip .lvl{font-size:9px;color:var(--text-dim);margin-top:2px;text-transform:uppercase;letter-spacing:0.03em;}
+
+.deal-actions{padding:0 16px 14px;display:flex;flex-wrap:wrap;gap:8px;}
+.cal-btn{
+  font-family:'JetBrains Mono',monospace;font-size:11px;
+  background:none;color:var(--amber);border:1px solid var(--amber-dim);
+  border-radius:6px;padding:7px 10px;cursor:pointer;
+}
+.cal-btn:active{background:rgba(255,182,39,0.1);}
+
+.empty{padding:24px 16px;text-align:center;color:var(--text-dim);font-size:13px;}
+
+.footer{margin-top:24px;padding-top:20px;border-top:1px solid var(--divider);font-size:12px;color:var(--text-dim);line-height:1.7;}
+.footer a{color:var(--amber);}
+
+@media(max-width:380px){
+  .date-chip{min-width:76px;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <div class="brand">
+      <div class="brand-mark">AC</div>
+      <div class="brand-text">
+        <h1>Deal Board</h1>
+        <p>YVR / YYJ &rarr; LAS &middot; HNL &middot; OGG</p>
+      </div>
+    </div>
+    <div class="refresh-note" id="refresh-note">loading&hellip;</div>
+  </div>
+
+  <div id="routes"></div>
+
+  <div class="footer">
+    Updated weekly by an automated scan. Green dates are flagged as deals;
+    red dates are running high. Tap <b>Add to calendar</b> on any deal date
+    to save it to your phone's calendar app.<br><br>
+    Routes and price targets are managed in
+    <a href="#" id="sheet-link">the settings sheet</a> &mdash; edit it anytime, no code needed.
+  </div>
+</div>
+
+<script>
+const DATA_URL = "data/deals.json";
+// Set this to your published Google Sheet's normal (editable) URL so the
+// footer link opens the right place.
+const SETTINGS_SHEET_URL = "";
+
+function classify(dateEntry) {
+  if (dateEntry.is_deal) return "deal";
+  if (dateEntry.price_level === "high") return "high";
+  return "";
+}
+
+function makeICS(route, dateEntry) {
+  const d = dateEntry.date.replace(/-/g, "");
+  const summary = `Flight deal: ${route.label} - CAD ${Math.round(dateEntry.price)}`;
+  const ics = [
+    "BEGIN:VCALENDAR",
+    "VERSION:2.0",
+    "BEGIN:VEVENT",
+    `DTSTART;VALUE=DATE:${d}`,
+    `DTEND;VALUE=DATE:${d}`,
+    `SUMMARY:${summary}`,
+    `DESCRIPTION:Route ${route.origin}-${route.dest}${dateEntry.airline ? ", " + dateEntry.airline : ""}, spotted at CAD ${Math.round(dateEntry.price)} one-way.`,
+    "END:VEVENT",
+    "END:VCALENDAR",
+  ].join("\r\n");
+
+  const blob = new Blob([ics], { type: "text/calendar" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `${route.origin}-${route.dest}-${dateEntry.date}.ics`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+function renderRoute(route) {
+  const card = document.createElement("div");
+  card.className = "route-card";
+
+  const head = document.createElement("div");
+  head.className = "route-head";
+  head.innerHTML = `<h2>${route.label}</h2><span>${route.origin}-${route.dest}</span>`;
+  card.appendChild(head);
+
+  if (!route.dates || !route.dates.length) {
+    const empty = document.createElement("div");
+    empty.className = "empty";
+    empty.textContent = "No fares found in the sampled dates this run.";
+    card.appendChild(empty);
+    return card;
+  }
+
+  const strip = document.createElement("div");
+  strip.className = "date-strip";
+  route.dates.forEach(de => {
+    const chip = document.createElement("div");
+    chip.className = "date-chip " + classify(de);
+    const priceText = de.price != null ? `$${Math.round(de.price)}` : "-";
+    const shortDate = new Date(de.date + "T00:00:00").toLocaleDateString(undefined, { month: "short", day: "numeric" });
+    chip.innerHTML = `
+      <div class="d">${shortDate}</div>
+      <div class="p">${priceText || "-"}</div>
+      <div class="lvl">${de.airline || de.price_level || ""}</div>
+    `;
+    strip.appendChild(chip);
+  });
+  card.appendChild(strip);
+
+  const deals = route.dates.filter(de => de.is_deal && de.price != null);
+  if (deals.length) {
+    const actions = document.createElement("div");
+    actions.className = "deal-actions";
+    deals.forEach(de => {
+      const btn = document.createElement("button");
+      btn.className = "cal-btn";
+      const shortDate = new Date(de.date + "T00:00:00").toLocaleDateString(undefined, { month: "short", day: "numeric" });
+      btn.textContent = `+ Calendar: ${shortDate} ($${Math.round(de.price)})`;
+      btn.onclick = () => makeICS(route, de);
+      actions.appendChild(btn);
+    });
+    card.appendChild(actions);
+  }
+
+  return card;
+}
+
+async function load() {
+  const notice = document.getElementById("refresh-note");
+  try {
+    const res = await fetch(DATA_URL, { cache: "no-store" });
+    if (!res.ok) throw new Error("no data yet");
+    const data = await res.json();
+
+    notice.innerHTML = `LAST SCAN<br><b>${data.generated_at}</b>`;
+
+    const container = document.getElementById("routes");
+    container.innerHTML = "";
+    data.routes.forEach(route => container.appendChild(renderRoute(route)));
+  } catch (e) {
+    notice.textContent = "no data yet";
+    document.getElementById("routes").innerHTML =
+      '<div class="empty">No scan results yet. This fills in after the first scheduled run.</div>';
+  }
+}
+
+if (SETTINGS_SHEET_URL) {
+  document.getElementById("sheet-link").href = SETTINGS_SHEET_URL;
+}
+
+load();
+</script>
+</body>
+</html>
