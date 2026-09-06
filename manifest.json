@@ -1,0 +1,11 @@
+{
+  "name": "YVR Deal Board",
+  "short_name": "Deal Board",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0A0E1A",
+  "theme_color": "#0A0E1A",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
