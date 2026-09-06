@@ -1,0 +1,431 @@
+{
+  "generated_at": "2026-09-06",
+  "routes": [
+    {
+      "origin": "YVR",
+      "dest": "LAS",
+      "label": "Las Vegas (from YVR)",
+      "alert_below": 180,
+      "dates": [
+        {
+          "date": "2026-09-13",
+          "price": 187,
+          "price_level": "typical",
+          "airline": "WestJet",
+          "is_deal": false
+        },
+        {
+          "date": "2026-09-20",
+          "price": 187,
+          "price_level": "typical",
+          "airline": "WestJet",
+          "is_deal": false
+        },
+        {
+          "date": "2026-09-27",
+          "price": 180,
+          "price_level": "typical",
+          "airline": "Air Canada",
+          "is_deal": true
+        },
+        {
+          "date": "2026-10-04",
+          "price": 180,
+          "price_level": "typical",
+          "airline": "Air Canada",
+          "is_deal": true
+        },
+        {
+          "date": "2026-10-11",
+          "price": 178,
+          "price_level": "typical",
+          "airline": "Air Canada",
+          "is_deal": true
+        },
+        {
+          "date": "2026-10-18",
+          "price": 178,
+          "price_level": "typical",
+          "airline": "Air Canada",
+          "is_deal": true
+        },
+        {
+          "date": "2026-10-25",
+          "price": 189,
+          "price_level": "typical",
+          "airline": "WestJet",
+          "is_deal": false
+        },
+        {
+          "date": "2026-11-01",
+          "price": 191,
+          "price_level": "typical",
+          "airline": "United",
+          "is_deal": false
+        },
+        {
+          "date": "2026-11-08",
+          "price": 178,
+          "price_level": "typical",
+          "airline": "Air Canada",
+          "is_deal": true
+        }
+      ]
+    },
+    {
+      "origin": "YVR",
+      "dest": "HNL",
+      "label": "Honolulu (from YVR)",
+      "alert_below": 280,
+      "dates": [
+        {
+          "date": "2026-09-13",
+          "price": 249,
+          "price_level": "low",
+          "airline": "WestJet",
+          "is_deal": true
+        },
+        {
+          "date": "2026-09-20",
+          "price": 249,
+          "price_level": "low",
+          "airline": "WestJet",
+          "is_deal": true
+        },
+        {
+          "date": "2026-09-27",
+          "price": 459,
+          "price_level": "high",
+          "airline": "United",
+          "is_deal": false
+        },
+        {
+          "date": "2026-10-04",
+          "price": 354,
+          "price_level": "typical",
+          "airline": "United",
+          "is_deal": false
+        },
+        {
+          "date": "2026-10-11",
+          "price": 543,
+          "price_level": "high",
+          "airline": "United",
+          "is_deal": false
+        },
+        {
+          "date": "2026-10-18",
+          "price": 276,
+          "price_level": "typical",
+          "airline": "Delta",
+          "is_deal": true
+        },
+        {
+          "date": "2026-10-25",
+          "price": 259,
+          "price_level": "typical",
+          "airline": "WestJet",
+          "is_deal": true
+        },
+        {
+          "date": "2026-11-01",
+          "price": 259,
+          "price_level": "typical",
+          "airline": "WestJet",
+          "is_deal": true
+        },
+        {
+          "date": "2026-11-08",
+          "price": 369,
+          "price_level": "typical",
+          "airline": "Air Canada",
+          "is_deal": false
+        }
+      ]
+    },
+    {
+      "origin": "YVR",
+      "dest": "OGG",
+      "label": "Maui (from YVR)",
+      "alert_below": 350,
+      "dates": [
+        {
+          "date": "2026-09-13",
+          "price": 597,
+          "price_level": "high",
+          "airline": "WestJet",
+          "is_deal": false
+        },
+        {
+          "date": "2026-09-20",
+          "price": 326,
+          "price_level": "typical",
+          "airline": "Delta",
+          "is_deal": true
+        },
+        {
+          "date": "2026-09-27",
+          "price": 469,
+          "price_level": "typical",
+          "airline": "United",
+          "is_deal": false
+        },
+        {
+          "date": "2026-10-04",
+          "price": 425,
+          "price_level": "typical",
+          "airline": "Alaska",
+          "is_deal": false
+        },
+        {
+          "date": "2026-10-11",
+          "price": 574,
+          "price_level": "high",
+          "airline": "United",
+          "is_deal": false
+        },
+        {
+          "date": "2026-10-18",
+          "price": 408,
+          "price_level": "typical",
+          "airline": "Alaska",
+          "is_deal": false
+        },
+        {
+          "date": "2026-10-25",
+          "price": 274,
+          "price_level": "typical",
+          "airline": "WestJet",
+          "is_deal": true
+        },
+        {
+          "date": "2026-11-01",
+          "price": 364,
+          "price_level": "typical",
+          "airline": "United",
+          "is_deal": false
+        },
+        {
+          "date": "2026-11-08",
+          "price": 408,
+          "price_level": "high",
+          "airline": "Alaska",
+          "is_deal": false
+        }
+      ]
+    },
+    {
+      "origin": "YYJ",
+      "dest": "LAS",
+      "label": "Las Vegas (from YYJ)",
+      "alert_below": 200,
+      "dates": [
+        {
+          "date": "2026-09-13",
+          "price": 232,
+          "price_level": "typical",
+          "airline": "WestJet",
+          "is_deal": false
+        },
+        {
+          "date": "2026-09-20",
+          "price": 232,
+          "price_level": "typical",
+          "airline": "WestJet",
+          "is_deal": false
+        },
+        {
+          "date": "2026-09-27",
+          "price": 232,
+          "price_level": "typical",
+          "airline": "WestJet",
+          "is_deal": false
+        },
+        {
+          "date": "2026-10-04",
+          "price": 251,
+          "price_level": "typical",
+          "airline": "Air Canada",
+          "is_deal": false
+        },
+        {
+          "date": "2026-10-11",
+          "price": 251,
+          "price_level": "typical",
+          "airline": "Air Canada",
+          "is_deal": false
+        },
+        {
+          "date": "2026-10-18",
+          "price": 251,
+          "price_level": "typical",
+          "airline": "Air Canada",
+          "is_deal": false
+        },
+        {
+          "date": "2026-10-25",
+          "price": 262,
+          "price_level": "typical",
+          "airline": "WestJet",
+          "is_deal": false
+        },
+        {
+          "date": "2026-11-01",
+          "price": 259,
+          "price_level": "typical",
+          "airline": "WestJet",
+          "is_deal": false
+        },
+        {
+          "date": "2026-11-08",
+          "price": 259,
+          "price_level": "typical",
+          "airline": "WestJet",
+          "is_deal": false
+        }
+      ]
+    },
+    {
+      "origin": "YYJ",
+      "dest": "HNL",
+      "label": "Honolulu (from YYJ)",
+      "alert_below": 300,
+      "dates": [
+        {
+          "date": "2026-09-13",
+          "price": 294,
+          "price_level": "low",
+          "airline": "WestJet",
+          "is_deal": true
+        },
+        {
+          "date": "2026-09-20",
+          "price": 294,
+          "price_level": "low",
+          "airline": "WestJet",
+          "is_deal": true
+        },
+        {
+          "date": "2026-09-27",
+          "price": 294,
+          "price_level": "low",
+          "airline": "WestJet",
+          "is_deal": true
+        },
+        {
+          "date": "2026-10-04",
+          "price": 501,
+          "price_level": "typical",
+          "airline": "Air Canada",
+          "is_deal": false
+        },
+        {
+          "date": "2026-10-11",
+          "price": 509,
+          "price_level": "typical",
+          "airline": "Air Canada",
+          "is_deal": false
+        },
+        {
+          "date": "2026-10-18",
+          "price": 424,
+          "price_level": "typical",
+          "airline": "Air Canada",
+          "is_deal": false
+        },
+        {
+          "date": "2026-10-25",
+          "price": 284,
+          "price_level": "typical",
+          "airline": "WestJet",
+          "is_deal": true
+        },
+        {
+          "date": "2026-11-01",
+          "price": 284,
+          "price_level": "typical",
+          "airline": "WestJet",
+          "is_deal": true
+        },
+        {
+          "date": "2026-11-08",
+          "price": 526,
+          "price_level": "typical",
+          "airline": "Air Canada",
+          "is_deal": false
+        }
+      ]
+    },
+    {
+      "origin": "YYJ",
+      "dest": "OGG",
+      "label": "Maui (from YYJ)",
+      "alert_below": 370,
+      "dates": [
+        {
+          "date": "2026-09-13",
+          "price": 773,
+          "price_level": "high",
+          "airline": "Air Canada",
+          "is_deal": false
+        },
+        {
+          "date": "2026-09-20",
+          "price": 648,
+          "price_level": "high",
+          "airline": "WestJet",
+          "is_deal": false
+        },
+        {
+          "date": "2026-09-27",
+          "price": 563,
+          "price_level": "typical",
+          "airline": "Air Canada",
+          "is_deal": false
+        },
+        {
+          "date": "2026-10-04",
+          "price": 612,
+          "price_level": "typical",
+          "airline": "Air Canada",
+          "is_deal": false
+        },
+        {
+          "date": "2026-10-11",
+          "price": 622,
+          "price_level": "typical",
+          "airline": "Alaska",
+          "is_deal": false
+        },
+        {
+          "date": "2026-10-18",
+          "price": 314,
+          "price_level": "low",
+          "airline": "WestJet",
+          "is_deal": true
+        },
+        {
+          "date": "2026-10-25",
+          "price": 314,
+          "price_level": "low",
+          "airline": "WestJet",
+          "is_deal": true
+        },
+        {
+          "date": "2026-11-01",
+          "price": 483,
+          "price_level": "typical",
+          "airline": "Air Canada",
+          "is_deal": false
+        },
+        {
+          "date": "2026-11-08",
+          "price": 483,
+          "price_level": "typical",
+          "airline": "Air Canada",
+          "is_deal": false
+        }
+      ]
+    }
+  ]
+}
