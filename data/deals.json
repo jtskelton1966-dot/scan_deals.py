@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28",
+  "generated_at": "2026-10-05",
   "routes": [
     {
       "origin": "YVR",
@@ -8,66 +8,66 @@
       "alert_below": 180,
       "dates": [
         {
-          "date": "2026-10-05",
-          "price": 187,
-          "price_level": "typical",
-          "airline": "Air Canada",
-          "is_deal": false
-        },
-        {
           "date": "2026-10-12",
-          "price": 187,
-          "price_level": "typical",
+          "price": 229,
+          "price_level": "high",
           "airline": "Air Canada",
           "is_deal": false
         },
         {
           "date": "2026-10-19",
-          "price": 187,
-          "price_level": "typical",
+          "price": 229,
+          "price_level": "high",
           "airline": "Air Canada",
           "is_deal": false
         },
         {
           "date": "2026-10-26",
-          "price": 223,
+          "price": 221,
           "price_level": "high",
           "airline": "WestJet",
           "is_deal": false
         },
         {
           "date": "2026-11-02",
-          "price": 214,
+          "price": 221,
           "price_level": "typical",
-          "airline": "Delta",
+          "airline": "WestJet",
           "is_deal": false
         },
         {
           "date": "2026-11-09",
-          "price": 214,
+          "price": 221,
           "price_level": "typical",
-          "airline": "Delta",
+          "airline": "WestJet",
           "is_deal": false
         },
         {
           "date": "2026-11-16",
-          "price": 191,
+          "price": 213,
           "price_level": "typical",
           "airline": "Air Canada",
           "is_deal": false
         },
         {
           "date": "2026-11-23",
-          "price": 191,
+          "price": 213,
           "price_level": "typical",
           "airline": "Air Canada",
           "is_deal": false
         },
         {
           "date": "2026-11-30",
-          "price": 206,
+          "price": 213,
           "price_level": "typical",
           "airline": "WestJet",
+          "is_deal": false
+        },
+        {
+          "date": "2026-12-07",
+          "price": 213,
+          "price_level": "typical",
+          "airline": "Air Canada",
           "is_deal": false
         }
       ]
@@ -79,66 +79,66 @@
       "alert_below": 280,
       "dates": [
         {
-          "date": "2026-10-05",
-          "price": 425,
-          "price_level": "typical",
-          "airline": "Air Canada",
-          "is_deal": false
-        },
-        {
           "date": "2026-10-12",
-          "price": 565,
+          "price": 620,
           "price_level": "high",
           "airline": "United",
           "is_deal": false
         },
         {
           "date": "2026-10-19",
-          "price": 384,
+          "price": 324,
           "price_level": "typical",
           "airline": "Delta",
           "is_deal": false
         },
         {
           "date": "2026-10-26",
-          "price": 345,
+          "price": 277,
           "price_level": "typical",
-          "airline": "Delta",
-          "is_deal": false
+          "airline": "Air Canada",
+          "is_deal": true
         },
         {
           "date": "2026-11-02",
-          "price": 340,
+          "price": 277,
           "price_level": "typical",
           "airline": "Air Canada",
-          "is_deal": false
+          "is_deal": true
         },
         {
           "date": "2026-11-09",
-          "price": 280,
+          "price": 277,
           "price_level": "typical",
-          "airline": "Delta",
+          "airline": "Air Canada",
           "is_deal": true
         },
         {
           "date": "2026-11-16",
-          "price": 282,
+          "price": 277,
           "price_level": "typical",
-          "airline": "WestJet",
-          "is_deal": false
+          "airline": "Air Canada",
+          "is_deal": true
         },
         {
           "date": "2026-11-23",
-          "price": 282,
+          "price": 277,
           "price_level": "typical",
-          "airline": "WestJet",
-          "is_deal": false
+          "airline": "Air Canada",
+          "is_deal": true
         },
         {
           "date": "2026-11-30",
-          "price": 280,
+          "price": 277,
           "price_level": "typical",
-          "airline": "Delta",
+          "airline": "Air Canada",
+          "is_deal": true
+        },
+        {
+          "date": "2026-12-07",
+          "price": 277,
+          "price_level": "typical",
+          "airline": "Air Canada",
           "is_deal": true
         }
       ]
@@ -150,66 +150,66 @@
       "alert_below": 350,
       "dates": [
         {
-          "date": "2026-10-05",
-          "price": 642,
-          "price_level": "high",
-          "airline": "American",
-          "is_deal": false
-        },
-        {
           "date": "2026-10-12",
-          "price": 506,
-          "price_level": "typical",
-          "airline": "United",
+          "price": 611,
+          "price_level": "high",
+          "airline": "Delta",
           "is_deal": false
         },
         {
           "date": "2026-10-19",
-          "price": 428,
+          "price": 374,
           "price_level": "typical",
-          "airline": "United",
+          "airline": "Delta",
           "is_deal": false
         },
         {
           "date": "2026-10-26",
-          "price": 317,
+          "price": 393,
           "price_level": "typical",
           "airline": "Delta",
-          "is_deal": true
+          "is_deal": false
         },
         {
           "date": "2026-11-02",
-          "price": 388,
+          "price": 397,
           "price_level": "typical",
-          "airline": "United",
+          "airline": "Delta",
           "is_deal": false
         },
         {
           "date": "2026-11-09",
-          "price": 388,
+          "price": 408,
           "price_level": "typical",
-          "airline": "United",
+          "airline": "Alaska",
           "is_deal": false
         },
         {
           "date": "2026-11-16",
-          "price": 367,
+          "price": 361,
           "price_level": "typical",
           "airline": "Delta",
           "is_deal": false
         },
         {
           "date": "2026-11-23",
-          "price": 341,
+          "price": 373,
           "price_level": "typical",
           "airline": "Air Canada",
-          "is_deal": true
+          "is_deal": false
         },
         {
           "date": "2026-11-30",
-          "price": 451,
-          "price_level": "high",
-          "airline": "Air Canada",
+          "price": 361,
+          "price_level": "typical",
+          "airline": "Delta",
+          "is_deal": false
+        },
+        {
+          "date": "2026-12-07",
+          "price": 361,
+          "price_level": "typical",
+          "airline": "Delta",
           "is_deal": false
         }
       ]
@@ -221,66 +221,66 @@
       "alert_below": 200,
       "dates": [
         {
-          "date": "2026-10-05",
-          "price": 386,
-          "price_level": "typical",
-          "airline": "Air Canada",
-          "is_deal": false
-        },
-        {
           "date": "2026-10-12",
-          "price": 375,
-          "price_level": "typical",
+          "price": 506,
+          "price_level": "high",
           "airline": "Air Canada",
           "is_deal": false
         },
         {
           "date": "2026-10-19",
-          "price": 338,
+          "price": 323,
           "price_level": "typical",
-          "airline": "WestJet",
+          "airline": "Air Canada",
           "is_deal": false
         },
         {
           "date": "2026-10-26",
-          "price": 354,
+          "price": 324,
           "price_level": "typical",
           "airline": "WestJet",
           "is_deal": false
         },
         {
           "date": "2026-11-02",
-          "price": 349,
+          "price": 281,
           "price_level": "typical",
           "airline": "WestJet",
           "is_deal": false
         },
         {
           "date": "2026-11-09",
-          "price": 349,
+          "price": 281,
           "price_level": "typical",
           "airline": "WestJet",
           "is_deal": false
         },
         {
           "date": "2026-11-16",
-          "price": 344,
+          "price": 336,
           "price_level": "typical",
-          "airline": "WestJet",
+          "airline": "Alaska",
           "is_deal": false
         },
         {
           "date": "2026-11-23",
-          "price": 304,
+          "price": 281,
           "price_level": "typical",
-          "airline": "Air Canada",
+          "airline": "WestJet",
           "is_deal": false
         },
         {
           "date": "2026-11-30",
-          "price": 339,
+          "price": 281,
           "price_level": "typical",
           "airline": "WestJet",
+          "is_deal": false
+        },
+        {
+          "date": "2026-12-07",
+          "price": 281,
+          "price_level": "typical",
+          "airline": "Air Canada",
           "is_deal": false
         }
       ]
@@ -292,67 +292,67 @@
       "alert_below": 300,
       "dates": [
         {
-          "date": "2026-10-05",
-          "price": 618,
-          "price_level": "typical",
-          "airline": "Air Canada",
-          "is_deal": false
-        },
-        {
           "date": "2026-10-12",
-          "price": 867,
+          "price": 937,
           "price_level": "high",
           "airline": "Air Canada",
           "is_deal": false
         },
         {
           "date": "2026-10-19",
-          "price": 528,
+          "price": 358,
           "price_level": "typical",
           "airline": "Air Canada",
           "is_deal": false
         },
         {
           "date": "2026-10-26",
-          "price": 545,
-          "price_level": "typical",
+          "price": 298,
+          "price_level": "low",
           "airline": "Air Canada",
-          "is_deal": false
+          "is_deal": true
         },
         {
           "date": "2026-11-02",
-          "price": 535,
+          "price": 298,
           "price_level": "typical",
           "airline": "Air Canada",
-          "is_deal": false
+          "is_deal": true
         },
         {
           "date": "2026-11-09",
-          "price": 535,
+          "price": 360,
           "price_level": "typical",
-          "airline": "Air Canada",
+          "airline": "Alaska",
           "is_deal": false
         },
         {
           "date": "2026-11-16",
-          "price": 431,
+          "price": 298,
           "price_level": "typical",
-          "airline": "WestJet",
-          "is_deal": false
+          "airline": "Air Canada",
+          "is_deal": true
         },
         {
           "date": "2026-11-23",
-          "price": 431,
+          "price": 298,
           "price_level": "typical",
-          "airline": "WestJet",
-          "is_deal": false
+          "airline": "Air Canada",
+          "is_deal": true
         },
         {
           "date": "2026-11-30",
-          "price": 431,
+          "price": 298,
           "price_level": "typical",
-          "airline": "WestJet",
-          "is_deal": false
+          "airline": "Air Canada",
+          "is_deal": true
+        },
+        {
+          "date": "2026-12-07",
+          "price": 298,
+          "price_level": "typical",
+          "airline": "Air Canada",
+          "is_deal": true
         }
       ]
     },
@@ -363,66 +363,66 @@
       "alert_below": 370,
       "dates": [
         {
-          "date": "2026-10-05",
-          "price": 796,
-          "price_level": "high",
-          "airline": "Air Canada",
-          "is_deal": false
-        },
-        {
           "date": "2026-10-12",
-          "price": 912,
+          "price": 1105,
           "price_level": "high",
           "airline": "Alaska",
           "is_deal": false
         },
         {
           "date": "2026-10-19",
-          "price": 566,
+          "price": 418,
           "price_level": "typical",
           "airline": "Air Canada",
           "is_deal": false
         },
         {
           "date": "2026-10-26",
-          "price": 583,
+          "price": 469,
           "price_level": "typical",
           "airline": "Air Canada",
           "is_deal": false
         },
         {
           "date": "2026-11-02",
-          "price": 557,
+          "price": 505,
           "price_level": "typical",
-          "airline": "Air Canada",
+          "airline": "Alaska",
           "is_deal": false
         },
         {
           "date": "2026-11-09",
-          "price": 546,
+          "price": 529,
           "price_level": "typical",
           "airline": "Air Canada",
           "is_deal": false
         },
         {
           "date": "2026-11-16",
-          "price": 524,
+          "price": 469,
           "price_level": "typical",
-          "airline": "WestJet",
+          "airline": "Air Canada",
           "is_deal": false
         },
         {
           "date": "2026-11-23",
-          "price": 524,
+          "price": 469,
           "price_level": "typical",
-          "airline": "WestJet",
+          "airline": "Air Canada",
           "is_deal": false
         },
         {
           "date": "2026-11-30",
-          "price": 524,
+          "price": 469,
           "price_level": "typical",
-          "airline": "WestJet",
+          "airline": "Air Canada",
+          "is_deal": false
+        },
+        {
+          "date": "2026-12-07",
+          "price": 469,
+          "price_level": "typical",
+          "airline": "Air Canada",
           "is_deal": false
         }
       ]
